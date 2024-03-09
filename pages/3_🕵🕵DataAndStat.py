@@ -3,7 +3,7 @@ import pandas as pd
 
 st.header("Show Data Index Price")
 
-df=pd.read_csv("./data/case_covid_weeknum_2022")
+df=pd.read_csv("./data/case_covid_weeknum_2022.csv")
 st.write(df.head(10))
 
 st.header("Show Chart")
