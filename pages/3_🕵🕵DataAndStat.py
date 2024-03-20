@@ -43,7 +43,7 @@ st.pyplot(fig)
 
 
 # เลือกคอลัมน์ที่ต้องการแสดง
-columns = ["age", "education"]
+columns = ["age", "salary"]
 
 # กำหนดค่า x
 x = df[column]
