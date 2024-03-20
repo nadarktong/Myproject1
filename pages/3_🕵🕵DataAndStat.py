@@ -45,29 +45,22 @@ st.pyplot(fig)
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# โหลดไฟล์ CSV
-df = pd.read_csv("./data/adultSalary.csv")
-
 # เลือกคอลัมน์ที่ต้องการแสดง
 column = "age"
 
 # กำหนดค่า x และ y
 x = df[column]
-y = df["salary"]
-
-# สร้าง Figure object
-fig, ax = plt.subplots()
+y = df["income"]
 
 # วาดกราฟเส้น
-ax.plot(x, y)
+plt.plot(x, y)
 
 # เพิ่มชื่อกราฟ
-plt.title("Line Chart of " + column + " vs Salary")
+plt.title("Line Chart of " + column + " vs income")
 
 # เพิ่ม labels แกน x และ y
 plt.xlabel(column)
-plt.ylabel("Salary")
+plt.ylabel("income")
 
 # แสดงกราฟบน Streamlit
 st.pyplot(fig)
-
