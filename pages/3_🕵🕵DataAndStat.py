@@ -14,4 +14,5 @@ st.line_chart(
 
 st.write(df.head(200))
 
-st.bar_chart(data, x="age", y="workclass")
+chart_type == "bar"
+   st.bar_chart(data, x="age", y="workclass")
