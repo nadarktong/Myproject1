@@ -18,3 +18,15 @@ chart_type = "bar"
 data = df.copy()
 
 st.bar_chart(data, x="workclass", y="age")
+
+def bar_chart(
+        self,
+        data: Data = None,
+        *,
+        x: str | None = None,
+        y: str | Sequence[str] | None = None,
+        color: str | Color | list[Color] | None = None,
+        width: int = 0,
+        height: int = 0,
+        use_container_width: bool = True,
+)
