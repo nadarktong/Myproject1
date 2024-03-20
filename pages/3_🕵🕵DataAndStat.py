@@ -15,4 +15,4 @@ st.line_chart(
 st.write(df.head(200))
 
 chart_type == "bar"
-   st.bar_chart(data, x="age", y="workclass")
+st.bar_chart(data, x="age", y="workclass")
