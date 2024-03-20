@@ -56,7 +56,8 @@ df_grouped = df.groupby("workclass")
 
 # วาดกราฟเส้นสำหรับแต่ละประเภทของงาน
 for workclass, df_workclass in df_grouped:
-  plt.plot(df_workclass["age"], df_workclass["salary"], label=workclass)
+  plt.plot(df_workclass["age_column"], df_workclass["salary_column"], label=workclass)
+
 
 # เพิ่มชื่อกราฟ
 plt.title("Line Chart of Age vs Salary by Workclass")
