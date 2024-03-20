@@ -39,3 +39,31 @@ plt.title("Pie Chart of " + column)
 
 # แสดงกราฟบน Streamlit
 st.pyplot(fig)
+
+
+
+# เลือกคอลัมน์ที่ต้องการแสดง
+columns = ["age", "education"]
+
+# กำหนดค่า x
+x = df[column]
+
+# กำหนดค่า y 
+y_list = [df[column] for column in columns]
+
+# วาดกราฟเส้น
+for y in y_list:
+    plt.plot(x, y, label=column)
+
+# เพิ่มชื่อกราฟ
+plt.title("Line Chart of Multiple Columns")
+
+# เพิ่ม labels แกน x และ y
+plt.xlabel("Age")
+plt.ylabel("Salary")
+
+# เพิ่ม legend
+plt.legend()
+
+# แสดงกราฟบน Streamlit
+st.pyplot(fig)
