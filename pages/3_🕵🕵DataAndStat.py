@@ -42,28 +42,25 @@ st.pyplot(fig)
 
 
 
+import matplotlib.pyplot as plt
+import pandas as pd
+
 # เลือกคอลัมน์ที่ต้องการแสดง
-columns = ["age", "education"]
+column = "age"
 
-# กำหนดค่า x
+# กำหนดค่า x และ y
 x = df[column]
-
-# กำหนดค่า y 
-y_list = [df[column] for column in columns]
+y = df["salary"]
 
 # วาดกราฟเส้น
-for y in y_list:
-    plt.plot(x, y, label=column)
+plt.plot(x, y)
 
 # เพิ่มชื่อกราฟ
-plt.title("Line Chart of Multiple Columns")
+plt.title("Line Chart of " + column + " vs Salary")
 
 # เพิ่ม labels แกน x และ y
-plt.xlabel("Age")
+plt.xlabel(column)
 plt.ylabel("Salary")
-
-# เพิ่ม legend
-plt.legend()
 
 # แสดงกราฟบน Streamlit
 st.pyplot(fig)
