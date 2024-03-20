@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.header("Show Data Index Price")
+st.header("Show Data")
 
 df=pd.read_csv("./data/Most Popular Naruto Characters.csv")
 st.write(df.head(10))
