@@ -29,5 +29,5 @@ st.bar_chart(data, x="workclass", y="age")
         width: int = 0,
         height: int = 0,
         use_container_width: bool = True,
-    ) -> DeltaGenerator:
+   ) -> DeltaGenerator:
         """Display a bar chart.
