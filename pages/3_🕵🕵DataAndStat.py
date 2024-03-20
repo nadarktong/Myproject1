@@ -22,7 +22,7 @@ st.bar_chart(data, x="workclass", y="age")
 chart_type = "bar"
 data = df.copy()
 
-st.bar_chart(data, x="salary", y="sex")
+st.bar_chart(data, x="income", y="sex")
 
 import matplotlib.pyplot as plt
 import pandas as pd
