@@ -28,8 +28,6 @@ value_counts = df[column].value_counts()
 fig, ax = plt.subplots(figsize=(10, 10))
 ax.pie(value_counts, labels=value_counts.index, autopct='%1.1f%%', startangle=90)
 plt.title("Pie Chart of " + column)
-fig, ax = plt.subplots()
-ax.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
 st.pyplot(fig)
 
 
