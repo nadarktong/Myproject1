@@ -26,7 +26,7 @@ import pandas as pd
 column = "workclass"
 value_counts = df[column].value_counts()
 fig, ax = plt.subplots(figsize=(10, 10))
-ax.pie(value_counts, labels=value_counts.index, autopct='%2.2f%%', startangle=150)
+ax.pie(value_counts, labels=value_counts.index, autopct='%10f%%', startangle=150)
 plt.title("Pie Chart of " + column)
 st.pyplot(fig)
 
