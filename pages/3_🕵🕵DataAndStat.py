@@ -19,61 +19,16 @@ data = df.copy()
 
 st.bar_chart(data, x="workclass", y="age")
 
-chart_type = "bar"
-data = df.copy()
-
-st.bar_chart(data, x="income", y="sex")
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# เลือกคอลัมน์ที่ต้องการแสดง
 column = "workclass"
-
-# แยกข้อมูลตามคอลัมน์
 value_counts = df[column].value_counts()
-
-# กำหนดขนาดกราฟ
 fig, ax = plt.subplots(figsize=(10, 10))
-
-# วาดกราฟวงกลม
 ax.pie(value_counts, labels=value_counts.index, autopct='%1.1f%%', startangle=90)
-
-# เพิ่มชื่อกราฟ
 plt.title("Pie Chart of " + column)
-
-# แสดงกราฟบน Streamlit
 st.pyplot(fig)
-
-
-
-import matplotlib.pyplot as plt
-import pandas as pd
-
-# โหลดไฟล์ CSV
-df = pd.read_csv("./data/adultSalary.csv")
-
-# เลือกคอลัมน์
-columns = ["age", "workclass", "salary"]
-
-# แยกข้อมูลตามประเภทของงาน
-df_grouped = df.groupby("workclass")
-
-# วาดกราฟเส้นสำหรับแต่ละประเภทของงาน
-for workclass, df_workclass in df_grouped:
-  plt.plot(df_workclass["age_column"], df_workclass["salary_column"], label=workclass)
-
-
-# เพิ่มชื่อกราฟ
-plt.title("Line Chart of Age vs Salary by Workclass")
-
-# เพิ่ม labels แกน x และ y
-plt.xlabel("Age")
-plt.ylabel("Salary")
-
-# เพิ่ม legend
-plt.legend()
-
-# แสดงกราฟบน Streamlit
-st.pyplot(fig)
-
+fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
