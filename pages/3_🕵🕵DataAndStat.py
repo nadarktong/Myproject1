@@ -17,4 +17,4 @@ st.write(df.head(200))
 chart_type = "bar"
 data = df.copy()
 
-st.bar_chart(data, x="age", y="workclass")
+st.bar_chart(data, x="workclass", y="age")
