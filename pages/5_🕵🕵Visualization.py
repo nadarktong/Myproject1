@@ -16,9 +16,9 @@ st.title("แสดงข้อมูล")
 chart_type = st.selectbox("เลือกประเภทกราฟ", ["bar", "pie", "line"])
 
 # แสดงกราฟ
- chart_type == "bar":
+chart_type == "bar":
     st.bar_chart(data, x="workclass", y="age") 
- chart_type == "pie":
+chart_type == "pie":
    column = "workclass"
    value_counts = df[column].value_counts()
    fig, ax = plt.subplots(figsize=(10, 10))
