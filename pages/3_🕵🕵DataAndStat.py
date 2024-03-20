@@ -8,29 +8,4 @@ st.write(df.head(10))
 
 st.header("Show Chart")
 
-st.line_chart(
-  df, x="age", y=["workclass","education"], color=["#FF0000", "#0000FF"]  # Optional
-)
-
 st.write(df.head(200))
-
-chart_type = "bar"
-data = df.copy()
-
-st.bar_chart(data, x="workclass", y="age")
-
-
-import matplotlib.pyplot as plt
-import pandas as pd
-
-column = "workclass"
-value_counts = df[column].value_counts()
-fig, ax = plt.subplots(figsize=(10, 10))
-explode = (0,1,0,0)
-ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150)
-plt.title("Pie Chart of " + column)
-st.pyplot(fig)
-
-
-
-
