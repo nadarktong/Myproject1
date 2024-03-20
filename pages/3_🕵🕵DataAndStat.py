@@ -19,23 +19,23 @@ data = df.copy()
 
 st.bar_chart(data, x="workclass", y="age")
 
-chart = alt.Chart(df).mark_bar().encode(
-    x=alt.X('age', title='Age'),
-    y=alt.Y('count()', title='Count'),  # ใช้ count() เพื่อนับจำนวนข้อมูลที่มีในแต่ละช่วงอายุ
-    color='workclass:N',
-    tooltip=['workclass', 'age']  # แก้ไขเป็นชื่อฟิลด์ที่ต้องการแสดงใน tooltip
-).properties(
-    width=600,
-    height=400,
-    title='Age Distribution by Platform'
-).configure_title(
-    fontSize=20,
-    fontWeight='bold',
-    color='gray'
-).configure_axis(
-    labelFontSize=12,
-    titleFontSize=16,
-    titleFontWeight='normal'
-)
+import matplotlib.pyplot as plt
+import pandas as pd
 
-st.altair_chart(chart, use_container_width=True)
+# เลือกคอลัมน์ที่ต้องการแสดง
+column = "workclass"
+
+# แยกข้อมูลตามคอลัมน์
+value_counts = df[column].value_counts()
+
+# กำหนดขนาดกราฟ
+fig, ax = plt.subplots(figsize=(10, 10))
+
+# วาดกราฟวงกลม
+ax.pie(value_counts, labels=value_counts.index, autopct='%1.1f%%', startangle=90)
+
+# เพิ่มชื่อกราฟ
+plt.title("Pie Chart of " + column)
+
+# แสดงกราฟบน Streamlit
+st.pyplot(fig)
