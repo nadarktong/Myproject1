@@ -30,4 +30,3 @@ def bar_chart(
       height: int = 0,
       use_container_width: bool = True,
 ) -> DeltaGenerator:
-   """Display a bar chart.
