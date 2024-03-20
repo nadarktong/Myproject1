@@ -12,3 +12,14 @@ st.line_chart(
    df, x="author", y=["published_at", "updated_at"], color=["#FF0000", "#0000FF"]  # Optional
 )
 st.write(df.head(200))
+
+import matplotlib.pyplot as plt
+
+data = {'Category': ['A', 'B', 'C', 'D'],
+        'Values': [25, 18, 32, 22]}
+
+plt.bar(data['Category'], data['Values'])
+plt.xlabel('Category')
+plt.ylabel('Values')
+plt.title('Bar Graph')
+plt.show()
