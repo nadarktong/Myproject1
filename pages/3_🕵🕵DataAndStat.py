@@ -19,7 +19,7 @@ data = df.copy()
 
 st.bar_chart(data, x="workclass", y="age")
 
-def bar_chart(
+  def bar_chart(
         self,
         data: Data = None,
         *,
@@ -29,4 +29,5 @@ def bar_chart(
         width: int = 0,
         height: int = 0,
         use_container_width: bool = True,
-)
+    ) -> DeltaGenerator:
+        """Display a bar chart.
