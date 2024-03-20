@@ -11,3 +11,4 @@ st.header("Show Chart")
 st.line_chart(
    df, x="author", y=["published_at", "updated_at"], color=["#FF0000", "#0000FF"]  # Optional
 )
+st.write(df.head(200))
