@@ -24,11 +24,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 column = "workclass"
-value_counts = df[column].value_counts()
 fig, ax = plt.subplots(figsize=(10, 10))
+value_counts = df[column].value_counts()  # Count occurrences of each workclass
 ax.pie(value_counts, labels=value_counts.index, autopct='%1.1f%%', startangle=90)
 plt.title("Pie Chart of " + column)
 st.pyplot(fig)
 fig1, ax1 = plt.subplots()
-  ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-    shadow=True, startangle=90)
+ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)  # Add shadow effect
+plt.title("Custom Pie Chart")  
+ax1.set_aspect('equal')  
+st.pyplot(fig1)
