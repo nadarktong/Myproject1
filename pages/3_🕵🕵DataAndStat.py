@@ -49,21 +49,21 @@ import pandas as pd
 df = pd.read_csv("./data/adultSalary.csv")
 
 # เลือกคอลัมน์
-columns = ["age", "workclass", "salary"]
+columns = ["age", "workclass", "income"]
 
 # แยกข้อมูลตามประเภทของงาน
 df_grouped = df.groupby("workclass")
 
 # วาดกราฟเส้นสำหรับแต่ละประเภทของงาน
 for workclass, df_workclass in df_grouped:
-    plt.plot(df_workclass["age"], df_workclass["salary"], label=workclass)
+    plt.plot(df_workclass["age"], df_workclass["income"], label=workclass)
 
 # เพิ่มชื่อกราฟ
-plt.title("Line Chart of Age vs Salary by Workclass")
+plt.title("Line Chart of Age vs income by Workclass")
 
 # เพิ่ม labels แกน x และ y
 plt.xlabel("Age")
-plt.ylabel("Salary")
+plt.ylabel("income")
 
 # เพิ่ม legend
 plt.legend()
