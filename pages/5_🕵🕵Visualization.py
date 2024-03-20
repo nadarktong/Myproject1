@@ -1,22 +1,24 @@
-import streamlit as st
 import pandas as pd
-import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# ตัวอย่างข้อมูล
-data = pd.DataFrame({
-"workclass": ["Private", "Private", "Private", "Government", "Private"],
-"age": [30, 35, 40, 45, 50]
+# ตั้งค่าข้อมูลตัวอย่าง
+df = pd.DataFrame({
+    "age": [20, 25, 30, 35, 40],
+    "workclass": ["Private", "Self-employed", "Private", "Private", "Self-employed"],
+    "education": ["High School", "Bachelors", "Masters", "PhD", "Bachelors"],
 })
 
-# แสดงชื่อกราฟ
-st.title("กราฟแท่งแสดงอายุเฉลี่ยในแต่ละประเภทอาชีพ")
+# กำหนดตัวแปร
+chart_type = "pie"  # เปลี่ยน "pie" เป็น "line" สำหรับแผนภูมิเส้น
 
-# เลือกประเภทกราฟ
-chart_type = st.selectbox("เลือกประเภทกราฟ", ["bar", "pie", "line"])
+# สร้างแผนภูมิ
 
-# แสดงกราฟ
 if chart_type == "bar":
+
+    # วาดแผนภูมิแท่ง
     st.bar_chart(data, x="workclass", y="age")
+
 elif chart_type == "pie":
 
     # เลือกคอลัมน์และจำนวนข้อมูล
@@ -28,7 +30,7 @@ elif chart_type == "pie":
 
     # วาดแผนภูมิวงกลม
     explode = (0, 1, 0, 0)
-    ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150, data=data)
+    ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150)
 
     # ตั้งชื่อกราฟ
     plt.title("Pie Chart of " + column)
