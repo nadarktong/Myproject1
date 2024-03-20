@@ -12,8 +12,3 @@ st.header("Show Chart")
 #  df, x="author", y=["published_at", "updated_at"], color=["#FF0000", "#0000FF"]  # Optional
 #)
 st.write(df.head(200))
-
-plt.xlabel('author')
-plt.ylabel('published_at','updated_at')
-plt.title('Bar Graph')
-plt.show()
