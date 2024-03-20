@@ -17,7 +17,7 @@ chart_type = st.selectbox("เลือกประเภทกราฟ", ["bar
 
 # แสดงกราฟ
 if chart_type == "bar":
-    st.bar_chart(data, x="workclass", y="age") 
+    #st.bar_chart(data, x="workclass", y="age") 
 elif chart_type == "pie":
    column = "workclass"
    value_counts = df[column].value_counts()
