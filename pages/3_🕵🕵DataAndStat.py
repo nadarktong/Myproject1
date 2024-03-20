@@ -45,22 +45,29 @@ st.pyplot(fig)
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# เลือกคอลัมน์ที่ต้องการแสดง
-column = "age"
+# โหลดไฟล์ CSV
+df = pd.read_csv("./data/adultSalary.csv")
 
-# กำหนดค่า x และ y
-x = df[column]
-y = df["income"]
+# เลือกคอลัมน์
+columns = ["age", "workclass", "salary"]
 
-# วาดกราฟเส้น
-plt.plot(x, y)
+# แยกข้อมูลตามประเภทของงาน
+df_grouped = df.groupby("workclass")
+
+# วาดกราฟเส้นสำหรับแต่ละประเภทของงาน
+for workclass, df_workclass in df_grouped:
+    plt.plot(df_workclass["age"], df_workclass["salary"], label=workclass)
 
 # เพิ่มชื่อกราฟ
-plt.title("Line Chart of " + column + " vs income")
+plt.title("Line Chart of Age vs Salary by Workclass")
 
 # เพิ่ม labels แกน x และ y
-plt.xlabel(column)
-plt.ylabel("income")
+plt.xlabel("Age")
+plt.ylabel("Salary")
+
+# เพิ่ม legend
+plt.legend()
 
 # แสดงกราฟบน Streamlit
 st.pyplot(fig)
+
