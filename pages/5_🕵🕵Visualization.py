@@ -14,12 +14,12 @@ chart_type = "pie"  # เปลี่ยน "pie" เป็น "line" สำห�
 
 # สร้างแผนภูมิ
 
-if chart_type == "bar":
+if chart_type == "bar"
 
     # วาดแผนภูมิแท่ง
     st.bar_chart(data, x="workclass", y="age")
 
-elif chart_type == "pie":
+elif chart_type == "pie"
 
     # เลือกคอลัมน์และจำนวนข้อมูล
     column = "workclass"
@@ -38,7 +38,7 @@ elif chart_type == "pie":
     # แสดงกราฟ
     plt.show()
 
-elif chart_type == "line":
+elif chart_type == "line"
 
     # วาดแผนภูมิเส้น
     sns.lineplot(data=df, x="age", y=["workclass", "education"], color=["#FF0000", "#0000FF"])
