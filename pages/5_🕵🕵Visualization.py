@@ -14,7 +14,7 @@ chart_type = "pie"  # เปลี่ยน "pie" เป็น "line" สำห�
 
 # สร้างแผนภูมิ
 
-if chart_type == "bar"
+if chart_type == "bar":
 
     # วาดแผนภูมิแท่ง
     st.bar_chart(data, x="workclass", y="age")
