@@ -17,6 +17,7 @@ chart_type = st.selectbox("เลือกประเภทกราฟ", ["bar
 # แสดงกราฟ
 chart_type == "bar"
 st.bar_chart(data, x="workclass", y="age")
+
 chart_type == "pie"
 column = "workclass"
 df = df.reset_index()
@@ -26,5 +27,6 @@ explode = (0,1,0,0)
 ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150, data=data)
 plt.title("Pie Chart of " + column)
 st.pyplot(fig)
+
 chart_type == "line"
 st.line_chart(data, x="age", y=["workclass","education"], color=["#FF0000", "#0000FF"])
