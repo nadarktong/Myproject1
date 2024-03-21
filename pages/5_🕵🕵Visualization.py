@@ -14,36 +14,19 @@ st.title("กราฟแท่งแสดงอายุเฉลี่ยใ�
 # เลือกประเภทกราฟ
 chart_type = st.selectbox("เลือกประเภทกราฟ", ["bar", "pie", "line"])
 
-if chart_type == "bar":
-    st.bar_chart(
-        df,
-        x="workclass",
-        y="age",
-        width=600,
-        height=400,
-        title="Bar Chart of Age by Workclass",
-    )
+# แสดงกราฟ
+if chart_type == "bar": # แสดงกราฟแท่ง
+ st.bar_chart(data, x="workclass", y="age")
 
 elif chart_type == "pie":
-    column = "workclass"
-    value_counts = df[column].value_counts()
-    fig, ax = plt.subplots(figsize=(8, 8))
-    explode = (0, 1, 0, 0)
-    ax.pie(
-        value_counts,
-        labels=value_counts.index,
-        autopct='%1.2f%%',
-        startangle=150,
-    )
-    plt.title("Pie Chart of " + column)
-    st.pyplot(fig)
+ column = "workclass"
+ df = df.reset_index()
+ value_counts = df['column'].value_counts()
+ fig, ax = plt.subplots(figsize=(10, 10))
+ explode = (0,1,0,0)
+ ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150, data=data)
+ plt.title("Pie Chart of " + column)
+ st.pyplot(fig)
 
 elif chart_type == "line":
-    st.line_chart(
-        df,
-        x="age",
-        y=["workclass", "education"],
-        hue=["workclass", "education"],
-        legend="full",
-    )
-
+ st.line_chart(data, x="age", y=["workclass","education"], color=["#FF0000", "#0000FF"])
