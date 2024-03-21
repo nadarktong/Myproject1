@@ -19,7 +19,7 @@ if chart_type == "bar":
     # วาดแผนภูมิแท่ง
     st.bar_chart(data, x="workclass", y="age")
 
-elif chart_type == "pie"
+elif chart_type == "pie":
 
     # เลือกคอลัมน์และจำนวนข้อมูล
     column = "workclass"
