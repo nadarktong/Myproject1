@@ -2,13 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# แสดงชื่อกราฟ
-st.title("กราฟแท่งแสดงอายุเฉลี่ยในแต่ละประเภทอาชีพ")
-
-# เลือกประเภทกราฟ
-chart_type = st.selectbox("เลือกประเภทกราฟ", ["bar", "pie", "line"])
-
-# แสดงกราฟ
 chart_type == "bar"
 st.bar_chart(data, x="workclass", y="age")
 
