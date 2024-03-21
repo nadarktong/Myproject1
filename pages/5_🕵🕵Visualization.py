@@ -10,14 +10,14 @@ df = pd.DataFrame({
 })
 
 # กำหนดตัวแปร
-chart_type = "bar"  # เปลี่ยน "bar" เป็น "pie" หรือ "line" สำหรับแผนภูมิอื่น
+chart_type = "pie"  # เปลี่ยน "pie" เป็น "line" สำหรับแผนภูมิเส้น
 
 # สร้างแผนภูมิ
 
 if chart_type == "bar":
 
     # วาดแผนภูมิแท่ง
-    st.bar_chart(df, x="workclass", y="age")
+    st.bar_chart(data, x="workclass", y="age")
 
 elif chart_type == "pie":
 
@@ -38,7 +38,7 @@ elif chart_type == "pie":
     # แสดงกราฟ
     plt.show()
 
-elif chart_type == "line":
+elif chart_type == "line"
 
     # วาดแผนภูมิเส้น
     sns.lineplot(data=df, x="age", y=["workclass", "education"], color=["#FF0000", "#0000FF"])
