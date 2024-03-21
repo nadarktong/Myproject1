@@ -34,8 +34,8 @@ elif chart_type == "line":
         px.line(
             df,  
             x="age",
-            y=["workclass", "salary"],
-            labels={"age": "Age", "workclass": "Workclass", "salary": "Salary"},
+            y=["workclass", "relationship"],
+            labels={"age": "Age", "workclass": "Workclass", "relationship": "relationship"},
             color_discrete_sequence=["red", "green"],
             title="Line Chart of Age and Income by Workclass"
         )
