@@ -11,12 +11,8 @@ st.header("Show Chart")
 import streamlit as st
 import pandas as pd
 
-# Load the dataframe from the CSV file
 df = pd.read_csv("./data/adultSalary.csv")
 
-# Define the list of columns to show in the table
-columns = ['age', 'workclass', 'education', 'relationship']
+# show first 4 channels
+st.table(df.head(4))
 
-# Display the table
-st.table(df[columns])
-st.table(df.head(20))
