@@ -10,14 +10,14 @@ df = pd.DataFrame({
 })
 
 # กำหนดตัวแปร
-chart_type = "pie"  # เปลี่ยน "pie" เป็น "line" สำหรับแผนภูมิเส้น
+chart_type = "bar"  # เปลี่ยน "bar" เป็น "pie" หรือ "line" สำหรับแผนภูมิอื่น
 
 # สร้างแผนภูมิ
 
 if chart_type == "bar":
 
     # วาดแผนภูมิแท่ง
-    st.bar_chart(data, x="workclass", y="age")
+    st.bar_chart(data=df, x="workclass", y="age")
 
 elif chart_type == "pie":
 
