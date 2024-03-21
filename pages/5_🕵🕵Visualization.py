@@ -25,7 +25,7 @@ if chart_type == "pie":
 
     # วาดแผนภูมิวงกลม
     explode = (0, 1, 0, 0)
-    ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150, data=data)
+    ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150)
 
     # ตั้งชื่อกราฟ
     plt.title("Pie Chart of " + column)
