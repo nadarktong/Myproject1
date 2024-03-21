@@ -38,7 +38,7 @@ elif chart_type == "pie":
     # แสดงกราฟ
     plt.show()
 
-elif chart_type == "line"
+elif chart_type == "line":
 
     # วาดแผนภูมิเส้น
     sns.lineplot(data=df, x="age", y=["workclass", "education"], color=["#FF0000", "#0000FF"])
