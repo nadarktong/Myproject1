@@ -19,4 +19,4 @@ columns = ['age', 'workclass', 'education', 'relationship']
 
 # Display the table
 st.table(df[columns])
-
+st.write(df.head(11))
