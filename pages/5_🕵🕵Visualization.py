@@ -32,8 +32,8 @@ elif chart_type == "line":
     st.plotly_chart(
         px.line(
             df,  
-            x="age",
-            y=["workclass", "education"],
+            x="workclass",
+            y=["age", "income"],
             labels={"workclass": "Workclass", "education": "Education"},
             color_discrete_sequence=["red", "green"],
             title="Line Chart of Age by Workclass and Education"
