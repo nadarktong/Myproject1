@@ -2,12 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# ตัวอย่างข้อมูล
-data = pd.DataFrame({
- "workclass": ["Private", "Private", "Private", "Government", "Private"],
- "age": [30, 35, 40, 45, 50]
-})
-
 # แสดงชื่อกราฟ
 st.title("กราฟแท่งแสดงอายุเฉลี่ยในแต่ละประเภทอาชีพ")
 
