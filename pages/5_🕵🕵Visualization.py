@@ -37,6 +37,6 @@ elif chart_type == "line":
             y=["workclass", "relationship"],
             labels={"age": "Age", "workclass": "Workclass", "relationship": "relationship"},
             color_discrete_sequence=["red", "green"],
-            title="Line Chart of Age and Income by Workclass"
+            title="Line Chart of Age and Relationship by Workclass"
         )
     )
