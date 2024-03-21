@@ -5,6 +5,7 @@ import plotly.express as px
 chart_type = st.selectbox("เลือกประเภทแผนภูมิ", ("bar", "pie", "line"))
 
 df=pd.read_csv("./data/adultSalary.csv")
+df['workclass'] = df['workclass'].astype('category')
 
 if chart_type == "bar":
     st.plotly_chart(
