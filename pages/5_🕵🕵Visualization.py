@@ -1,22 +1,22 @@
 import streamlit as st
-import pandas as pd
 import plotly.express as px
 
-chart_type = st.selectbox("เลือกประเภทแผนภูมิ", ("bar", "pie", "line"))
+chart_type = st.selectbox("Select chart type", ("bar", "pie", "line"))
 
 df=pd.read_csv("./data/adultSalary.csv")
 
-if chart_type == "bar":
+if chart_type == "line":
     st.plotly_chart(
-        px.bar(
+        px.line(
             df,  
             x="workclass",
-            y="age",
-            labels={"workclass": "Workclass", "age": "Age"},
-            title="Bar Chart of Age by Workclass"
+            y=["age", "income"],
+            labels={"workclass": "Workclass", "age": "Age", "income": "Income"},
+            color_discrete_sequence=["red", "green"],
+            title="Line Chart of Age and Income by Workclass"
         )
     )
-
+    
 elif chart_type == "pie":
     column = "workclass" 
     value_counts = df[column].value_counts()  
@@ -28,14 +28,13 @@ elif chart_type == "pie":
     )  
     st.plotly_chart(fig)
 
-elif chart_type == "line":
+elif chart_type == "bar":
     st.plotly_chart(
-        px.line(
+        px.bar(
             df,  
             x="workclass",
-            y=["age", "income"],
-            labels={"workclass": "Workclass", "education": "Education"},
-            color_discrete_sequence=["red", "green"],
-            title="Line Chart of Age by Workclass and Education"
+            y="age",
+            labels={"workclass": "Workclass", "age": "Age"},
+            title="Bar Chart of Age by Workclass"
         )
     )
