@@ -14,12 +14,7 @@ chart_type = "pie"  # เปลี่ยน "pie" เป็น "line" สำห�
 
 # สร้างแผนภูมิ
 
-if chart_type == "bar":
-
-    # วาดแผนภูมิแท่ง
-    st.bar_chart(data, x="workclass", y="age")
-
-elif chart_type == "pie":
+if chart_type == "pie":
 
     # เลือกคอลัมน์และจำนวนข้อมูล
     column = "workclass"
@@ -30,7 +25,7 @@ elif chart_type == "pie":
 
     # วาดแผนภูมิวงกลม
     explode = (0, 1, 0, 0)
-    ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150)
+    ax.pie(value_counts, labels=value_counts.index, autopct='%1.2f%%', startangle=150, data=data)
 
     # ตั้งชื่อกราฟ
     plt.title("Pie Chart of " + column)
@@ -48,3 +43,4 @@ elif chart_type == "line":
 
     # แสดงกราฟ
     plt.show()
+
