@@ -15,7 +15,7 @@ st.title("กราฟแท่งแสดงอายุเฉลี่ยใ�
 chart_type = st.selectbox("เลือกประเภทกราฟ", ["bar", "pie", "line"])
 
 # แสดงกราฟ
-chart_type == "bar": # แสดงกราฟแท่ง
+chart_type == "bar":
  st.bar_chart(data, x="workclass", y="age")
 chart_type == "pie":
  column = "workclass"
