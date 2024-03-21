@@ -4,7 +4,7 @@ import numpy as np
 
 # ตัวอย่างข้อมูล
 data = pd.DataFrame({
-    "workclass": ["Private", "Private", "Private", "Government", "Private"],
+ "workclass": ["Private", "Private", "Private", "Government", "Private"],
     "age": [30, 35, 40, 45, 50]
 })
 
