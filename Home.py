@@ -15,7 +15,7 @@ lottie_hello = load_lottieurl(lottie_url_hello)
 
 
 st.header("☢ ข้อมูลการสำรวจสำมะโนประชากร 🕵")
-st.header("by Varut")
+st.header("by Varut Pongsai")
 
 # Display the lottie animation
 st_lottie(lottie_hello, key="hello")
